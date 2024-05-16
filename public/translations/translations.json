@@ -1,0 +1,145 @@
+{
+    "en": {
+        "common":{
+          "more": "More",
+          "order_price": "Order price",
+          "all_link": "All"
+        },
+        "header":{
+          "menu_btn": "Menu"
+        },
+        "main_menu": {
+          "catalog": "Catalog",
+          "buyers": "For buyers",
+          "contacts": "Contacts",
+          "guitars": "Guitars",
+          "keyboard_instruments": "Keyboard instruments",
+          "percussion_instruments": "Percussion instruments",
+          "about": "About",
+          "blog": "Blog",
+          "shipping": "Shipping and payment",
+          "returns": "Purchase returns",
+          "tg": "Telegram",
+          "vk": "VKontakte"
+        },
+        "comparison": {
+          "electric_guitars": "Electric guitars",
+          "acoustic_guitars": "Acoustic guitars",
+          "сlassical_guitars": "Classical guitars",
+          "bass_guitars": "Bass guitars",
+          "main_heading": "Comparison"
+        },
+        "breadcrumbs": {
+          "main": "Main",
+          "comparison": "Comparison",
+          "cart": "Cart",
+          "favorites": "Favorites",
+          "catalog": "Catalog",
+          "profile": "Profile",
+          "guitars": "Guitars",
+          "keyboard_instruments": "Keyboard instruments",
+          "percussion_instruments": "Percussion instruments",
+          "order": "Placing an order",
+          "personal_data_policy": "Data processing policy",
+          "privacy_policy": "Privacy policy",
+          "watched_products": "Watched products",
+          "collection_products": "Products by Collection"
+        },
+        "footer": {
+          "copyright": "NAMESHOP. All rights reserved",
+          "policy": "Data processing policy",
+          "privacy": "Privacy policy",
+          "mobile_version": "Mobile version",
+          "full_version": "Full version of the site"
+        },
+        "main_page": {
+          "hero_title": "YOU HAVE A DREAM – NAMESHOP MAKES IT CLOSER!",
+          "catalog_btn": "Catalog",
+          "category_title": "Categories",
+          "category_electric_guitars": "Electric guitars",
+          "category_acoustic_guitars": "Acoustic guitars",
+          "category_сlassical_guitars": "Classical guitars",
+          "category_bass_guitars": "Bass guitars",
+          "bestsellers_title": "Bestsellers",
+          "new_title": "New",
+          "brand_title": "Life of our brand",
+          "brand_nature": "With care for nature",
+          "brand_look": "New look at merch",
+          "brand_idea": "Idea of the collection «Black»",
+          "is_new": "New",
+          "is_bestseller": "Bestseller"
+        }
+    },
+    "ru": {
+        "common":{
+          "more": "Ещё",
+          "order_price": "Сумма заказа",
+          "all_link": "Все"
+        },
+        "header":{
+          "menu_btn": "Меню"
+        },
+        "main_menu": {
+          "catalog": "Каталог",
+          "buyers": "Покупателям",
+          "contacts": "Контакты",
+          "guitars": "Гитары",
+          "keyboard_instruments": "Клавишные инструменты",
+          "percussion_instruments": "Ударные инструменты",
+          "about": "О нас",
+          "blog": "Блог",
+          "shipping": "Доставка и оплата",
+          "returns": "Возврат товара",
+          "tg": "Телеграм",
+          "vk": "Вконтакте"
+        },
+        "comparison": {
+          "electric_guitars": "Электрические гитары",
+          "acoustic_guitars": "Акустические гитары",
+          "сlassical_guitars": "Классические гитары",
+          "bass_guitars": "Басс-гитары",
+          "main_heading": "Сравнение"
+        },
+        "breadcrumbs": {
+          "main": "Главная",
+          "comparison": "Сравнение",
+          "cart": "Корзина",
+          "favorites": "Избранное",
+          "catalog": "Каталог",
+          "profile": "Профиль",
+          "guitars": "Гитары",
+          "keyboard_instruments": "Клавишные инструменты",
+          "percussion_instruments": "Ударные инструменты",
+          "order": "Оформление заказа",
+          "personal_data_policy": "Политика обработки данных",
+          "privacy_policy": "Политика конфиденциальности",
+          "watched_products": "Просмотренные товары",
+          "collection_products": "Товары по коллекции"
+        },
+        "footer": {
+          "copyright": "NAMESHOP. Все права защищены",
+          "policy": "Политика обработки данных",
+          "privacy": "Политика конфиденциальности",
+          "mobile_version": "Мобильная версия",
+          "full_version": "Полная версия сайта"
+        },
+        "main_page": {
+          "hero_title": "У ВАС ЕСТЬ МЕЧТА – NAMESHOP ДЕЛАЕТ ЕЕ БЛИЖЕ!",
+          "catalog_btn": "Каталог",
+          "category_title": "Категории",
+          "category_electric_guitars": "Электрические гитары",
+          "category_acoustic_guitars": "Акустические гитары",
+          "category_сlassical_guitars": "Классические гитары",
+          "category_bass_guitars": "Басс-гитары",
+          "bestsellers_title": "Хиты",
+          "new_title": "Новинки",
+          "brand_title": "Жизнь нашего бренда",
+          "brand_nature": "C заботой о природе",
+          "brand_look": "Новый взгляд на мерч",
+          "brand_idea": "Идея колекции «Black»",
+          "is_new": "Новинка",
+          "is_bestseller": "Хит"
+        }
+      
+    }
+}

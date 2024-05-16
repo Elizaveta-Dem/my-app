@@ -1,0 +1,151 @@
+.hero__container {
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+    height: 800px;
+    padding-top: 325px;
+    padding-bottom: 325px;
+    padding-left: 539px;
+    padding-right: 539px;
+    background-image: url("/img/main-pic.png");
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+}
+
+.hero__hidden__title {
+    color: #303233;
+    font-size: 42px;
+    text-align: center;
+}
+
+.img_loading {
+    background-color: #252525;
+    pointer-events: none;
+}
+
+@media (max-width: 1460px) {
+    .hero__container {
+        height: 600px; 
+        padding-top: 244px;
+        padding-bottom: 244px;
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+
+    .hero__hidden__title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 1220px) {
+    .hero__container {
+        height: 500px; 
+        padding-top: 204px;
+        padding-bottom: 204px;
+        padding-left: 340px;
+        padding-right: 340px;
+    }
+
+    .hero__hidden__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__container {
+        height: 500px; 
+        padding-top: 204px;
+        padding-bottom: 204px;
+        padding-left: 220px;
+        padding-right: 220px;
+    }
+
+    .hero__hidden__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero__container {
+        height: 600px; 
+        padding-top: 244px;
+        padding-bottom: 244px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .hero__hidden__title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 820px) {
+    .hero__container {
+        height: 600px; 
+        padding-top: 244px;
+        padding-bottom: 244px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    .hero__hidden__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero__container {
+        height: 500px; 
+        padding-top: 204px;
+        padding-bottom: 204px;
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .hero__hidden__title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero__container {
+        height: 400px; 
+        padding-top: 162px;
+        padding-bottom: 162px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .hero__hidden__title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 390px) {
+    .hero__container {
+        height: 298px; 
+        padding-top: 116px;
+        padding-bottom: 116px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .hero__hidden__title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero__container {
+        height: 298px; 
+        padding-top: 122px;
+        padding-bottom: 122px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero__hidden__title {
+        font-size: 16px;
+    }
+}
