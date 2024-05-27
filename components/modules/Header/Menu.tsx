@@ -13,18 +13,21 @@ import MenuLinkItem from "./MenuLinkItem";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 import BuyersListItems from "./BuyersListItems";
 import ContactsListItems from "./ContactsListItems";
+import { useCategoryQuery } from "../../../hooks/useCategoriesQuery";
+
 
 const Menu = () => {
-    const [showCatalogList, setShowCatalogList] = useState(false)
-    const [showBuyersList, setShowBuyersList] = useState(false)
-    const [showContactsList, setShowContactsList] = useState(false)
-    const menuIsOpen = useUnit($menuIsOpen)
-    const { lang, translations } = useLang()
-    const pathname = usePathname()
+    const [showCatalogList, setShowCatalogList] = useState(false);
+    const [showBuyersList, setShowBuyersList] = useState(false);
+    const [showContactsList, setShowContactsList] = useState(false);
+    const { lang, translations } = useLang();
+    const pathname = usePathname();
     const isMedia800 = useMediaQuery(800)
     const isMedia640 = useMediaQuery(640)
+    const menuIsOpen = useUnit($menuIsOpen);
 
-    //ф-ия, которая переключает язык по нажатию иконок ru или en
+    const { data, isLoading, error } = useCategoryQuery();
+
     const handleSwitchLang = (lang: string) => {
         setLang(lang as AllowedLangs)
         localStorage.setItem('lang', JSON.stringify(lang))
@@ -32,74 +35,59 @@ const Menu = () => {
 
     const handleSwitchLangToRu = () => handleSwitchLang('ru')
     const handleSwitchLangToEn = () => handleSwitchLang('en')
+   
 
     const handleShowCatalogList = () => {
-        setShowCatalogList(true)
-        setShowBuyersList(false)
-        setShowContactsList(false)
-    }
+        setShowCatalogList(true);
+        setShowBuyersList(false);
+        setShowContactsList(false);
+    };
 
     const handleShowBuyersList = () => {
-        setShowCatalogList(false)
-        setShowBuyersList(true)
-        setShowContactsList(false)
-    }
+        setShowCatalogList(false);
+        setShowBuyersList(true);
+        setShowContactsList(false);
+    };
 
     const handleShowContactsList = () => {
-        setShowCatalogList(false)
-        setShowBuyersList(false)
-        setShowContactsList(true)
-    }
+        setShowCatalogList(false);
+        setShowBuyersList(false);
+        setShowContactsList(true);
+    };
 
     const handleCloseMenu = () => {
-        removeOverflowHiddenFromBody()
-        closeMenu()
-    }
+        removeOverflowHiddenFromBody();
+        closeMenu();
+    };
 
     const handleRedirectToCatalog = (path: string) => {
         if (pathname.includes('/catalog')) {
-          window.history.pushState({ path }, '', path)
-          window.location.reload()
+            window.history.pushState({ path }, '', path);
+            window.location.reload();
         }
-    
-        handleCloseMenu()
+        handleCloseMenu();
+    };
+
+    if (isLoading) {
+        return <div>Загрузка...</div>;
     }
 
-    const guitarsLinks = [
-        {
-          id: 1,
-          text: translations[lang].comparison['electric_guitars'],
-          href: '/catalog/guitars?offset=0&type=electric_guitars',
-        },
-        {
-          id: 2,
-          text: translations[lang].comparison['acoustic_guitars'],
-          href: '/catalog/guitars?offset=0&type=acoustic_guitars',
-        },
-        {
-          id: 3,
-          text: translations[lang].comparison['сlassical_guitars'],
-          href: '/catalog/guitars?offset=0&type=сlassical guitars',
-        },
-        {
-          id: 4,
-          text: translations[lang].comparison['bass_guitars'],
-          href: '/catalog/guitars?offset=0&type=bass_guitars',
-        },
-      ]  
+    if (error) {
+        return <div>Ошибка загрузки категорий</div>;
+      }
 
     return (
         <nav className={`nav-menu ${menuIsOpen ? 'open' : 'close'}`}>
-           <div className="container nav-menu__container">
-            <div className={`nav-menu__logo ${menuIsOpen ? 'open' : ''}`}>
-                <Logo />
-            </div>
+            <div className="container nav-menu__container">
+                <div className={`nav-menu__logo ${menuIsOpen ? 'open' : ''}`}>
+                    <Logo />
+                </div>
                 <button
                     className={`btn-reset nav-menu__close ${menuIsOpen ? 'open' : ''}`}
                     onClick={handleCloseMenu}
                 />
                 <div className={`nav-menu__lang ${menuIsOpen ? 'open' : ''}`}>
-                    <button
+                <button
                         className={`btn-reset nav-menu__lang__btn ${
                             lang === 'ru' ? 'lang-active' : ''
                         }`}
@@ -139,10 +127,14 @@ const Menu = () => {
                                                 titleClass='btn-reset nav-menu__accordion__item__title'
                                             >
                                                 <ul className='list-reset nav-menu__accordion__item__list'>
-                                                    {guitarsLinks.map((item) => (
+                                                    {data?.map((category) => (
                                                         <MenuLinkItem
-                                                            key={item.id}
-                                                            item={item}
+                                                            key={category.id}
+                                                            item={{
+                                                                id: category.id,
+                                                                text: category.name,
+                                                                href: `/catalog/${category.id}`,
+                                                            }}
                                                             handleRedirectToCatalog={handleRedirectToCatalog}
                                                         />
                                                     ))}
@@ -182,9 +174,9 @@ const Menu = () => {
                                 title={translations[lang].main_menu.buyers}
                                 titleClass='btn-reset nav-menu__list__item__btn'
                             >
-                            <ul className='list-reset nav-menu__accordion__item__list'>
-                                <BuyersListItems />
-                            </ul>
+                                <ul className='list-reset nav-menu__accordion__item__list'>
+                                    <BuyersListItems />
+                                </ul>
                             </Accordion>
                         )}
                     </li>
@@ -216,9 +208,9 @@ const Menu = () => {
                                 title={translations[lang].main_menu.contacts}
                                 titleClass='btn-reset nav-menu__list__item__btn'
                             >
-                            <ul className='list-reset nav-menu__accordion__item__list'>
-                                <ContactsListItems />
-                            </ul>
+                                <ul className='list-reset nav-menu__accordion__item__list'>
+                                    <ContactsListItems />
+                                </ul>
                             </Accordion>
                         )}
                     </li>
@@ -227,7 +219,5 @@ const Menu = () => {
         </nav>
     );
 };
-
-
 
 export default Menu;

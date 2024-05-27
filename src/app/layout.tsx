@@ -10,6 +10,7 @@ import "./globalStyles/footer.css"
 import "./globalStyles/slick-theme.css"
 import "./globalStyles/slick.css"
 import Layout from "../../components/layouts/Layout"
+import ReactQueryProvider from '../../lib/providers/react-query';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Layout>{children}</Layout>
+        <ReactQueryProvider>
+          <Layout>{children}</Layout>
+        </ReactQueryProvider>
       </body>
     </html>
   )
